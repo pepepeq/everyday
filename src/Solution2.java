@@ -1,3 +1,8 @@
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * name：Solution2
  * date：2024/8/9
@@ -45,5 +50,22 @@
             }
         }
         return head;
+    }
+
+    List<Integer> list = new ArrayList<>();
+    @Test
+    void test() {
+        ListNode l1 = ListNode.createList(new int[]{1, 2, 3, 4, 5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1});
+        ListNode l2 = ListNode.createList(new int[]{4, 5, 1, 2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1});
+        ListNode result = addTwoNumbers(l1, l2);
+
+
+        while(result != null) {
+
+           list.add(result.val);
+            result = result.next;
+
+        }
+        System.out.println(list);
     }
 }
